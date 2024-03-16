@@ -20,7 +20,7 @@ function Table() {
     </table>
   );
 }
-
+// accepts any type of property for its parameter
 function Heading(props: any) {
   return <h1 className="mt-4 mb-4">{props.title}</h1>;
 }

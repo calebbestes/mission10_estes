@@ -3,11 +3,11 @@ import { Bowling } from '../types/Bowling';
 
 // BowlingList is a functional component (declared as a funciton and doesn't extend from a class)
 function BowlingList() {
-    // declares bowling data as a state variable (which is a piece of data 
-    // managed by a component that changes over time), and its setter function,
-    // using the useState hook (which sets it initially to an empty array of type bowling)
+  // declares bowling data as a state variable (which is a piece of data
+  // managed by a component that changes over time), and its setter function,
+  // using the useState hook (which sets it initially to an empty array of type bowling)
   const [bowlingData, setBowlingData] = useState<Bowling[]>([]);
-//   use effect performs the side effects of functional components
+  //   use effect performs the side effects of functional components
   useEffect(() => {
     // makes an HTTP Get request the website
     const fetchBowlingData = async () => {
@@ -20,7 +20,7 @@ function BowlingList() {
     };
     //calls the function
     fetchBowlingData();
-    //In React's useEffect hook, if you provide an empty dependency array 
+    //In React's useEffect hook, if you provide an empty dependency array
     // as the second argument, React will execute the effect only after the initial render and never re-run it
   }, []);
 
@@ -44,11 +44,11 @@ function BowlingList() {
           </tr>
         </thead>
         <tbody>
-            {/* checks if the bowlingData is an array */}
+          {/* checks if the bowlingData is an array */}
           {Array.isArray(bowlingData) &&
-        //   maps each element of the bowlingData array to a table row 
+            //   maps each element of the bowlingData array to a table row
             bowlingData.map((b) => (
-                // b is the json array declared above. 
+              // b is the json array declared above.
               <tr key={b.bowlerId}>
                 <td>{b.bowlerFirstName}</td>
                 <td>{b.bowlerMiddleInit}</td>
