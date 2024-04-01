@@ -16,7 +16,7 @@ namespace WebAPI.Controllers
             _bowlingRepository = bowlingRepository;
             // Configure JsonSerializerOptions to ignore circular references
         }
-        
+        [HttpGet]
         public IEnumerable<Bowler> Get()
         {
             var data = _bowlingRepository.GetBowlersWithTeam();
